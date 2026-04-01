@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/brawlhalla_gamepedia/images/1/14/Brawlhalla_Logo_100M_Full.png/revision/latest?cb=20230520001004">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawlhalla Legend Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Brawlhalla <span>Index</span></h1>
+        <div class="filter-bar">
+            <div id="filter-chips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;"></div>
+            <input type="text" id="search-input" placeholder="Search names or type a tag and press Enter..." 
+                 onkeydown="if(event.key === 'Enter') addFilterTag(this.value)">
+            <select id="weaponFilter">
+                <option value="All">All Weapons</option>
+                <option value="Axe">Axe</option>
+                <option value="Battle Boots">Battle Boots</option>
+                <option value="Blasters">Blasters</option>
+                <option value="Bow">Bow</option>                
+                <option value="Chakram">Chakram</option>
+                <option value="Gauntlets">Gauntlets</option>
+                <option value="Greatsword">Greatsword</option>
+                <option value="Hammer">Hammer</option>
+                <option value="Katars">Katars</option>
+                <option value="Orb">Orb</option>
+                <option value="Rocket Lance">Rocket Lance</option>                
+                <option value="Scythe">Scythe</option>
+                <option value="Spear">Spear</option>
+                <option value="Sword">Sword</option>                
+            </select>
+            <select id="statSort">
+                <option value="default">Sort By Stat</option>
+                <option value="str">Strength</option>
+                <option value="dex">Dexterity</option>
+                <option value="def">Defense</option>
+                <option value="spd">Speed</option>
+            </select>
+        </div>
+    </header>
+
+    <main id="legendGrid" class="legend-grid"></main>
+
+    <script src="script.js"></script>
+</body>
+</html>
