@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brawldle!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Brawldle Styles */
+        .brawldle-grid {
+            display: grid;
+            /* 8 columns for your 8 categories */
+            grid-template-columns: repeat(8, 1fr); 
+            gap: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .guess-box {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Wordle Colors */
+        .correct { background-color: #538d4e; } /* Green */
+        .partial { background-color: #b59f3b; } /* Yellow (for weapons) */
+        .wrong { background-color: #3a3a3c; }   /* Gray */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Brawldle</h1>
+        <a href="index.html" style="color: var(--gold);">Back to Tracker</a>
+
+        <div style="margin: 20px 0;">
+            <input type="text" id="brawldle-guess" placeholder="Guess a legend...">
+            <button onclick="makeGuess()">Submit</button>
+        </div>
+
+        <div class="brawldle-grid" style="font-size: 0.8em; color: gray;">
+            <div>Legend</div>
+            <div>Gender</div>
+            <div>Weapon 1</div>
+            <div>Weapon 2</div>
+            <div>Highest Stat</div>
+            <div>Origin</div>
+            <div>Hobby</div>
+            <div>Year</div>
+        </div>
+
+        <div id="guess-container"></div>
+    </div>
+
+    <script src="script.js"></script> 
+    <script src="brawldle.js"></script>
+</body>
+</html>
