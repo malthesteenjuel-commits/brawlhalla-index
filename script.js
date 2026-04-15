@@ -188,7 +188,7 @@ const defaultLegends = [
         id: 24, 
         name: "Kor", 
         image: "https://cms.brawlhalla.com/c/uploads/2021/07/a_Roster_Pose_GolemM.png",
-        weapons: ["gauntlets", "Hammer"], 
+        weapons: ["Gauntlets", "Hammer"], 
         stats: { str: 6, dex: 5, def: 7, spd: 4 }, 
         tags: ["Gauntlets", "Hammer", "Asgardian", "'Bot' Bot", "Hat Wearer"]
     },
