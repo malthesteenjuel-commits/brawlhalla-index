@@ -38,9 +38,10 @@
                 Back to Index
             </a>
         </div>
-        <div style="margin: 20px 0;">
-            <input type="text" id="brawldle-guess" placeholder="Guess a legend...">
-            <button onclick="makeGuess()">Submit</button>
+        <div style="margin: 20px 0; display: flex; justify-content: center; gap: 10px;">
+            <input list="legend-names" id="brawldle-guess" placeholder="Guess a legend..." style="padding: 10px; width: 200px;">
+            <datalist id="legend-names"></datalist>
+            <button onclick="makeGuess()" class="btn-add-tag" style="padding: 10px 20px;">Submit</button>
         </div>
 
         <div class="brawldle-grid" style="font-size: 0.8em; color: gray;">
