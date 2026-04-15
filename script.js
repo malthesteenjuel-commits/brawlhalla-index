@@ -667,7 +667,7 @@ const defaultLegends = [
     { 
         id: 52, 
         name: "Magyar", 
-        image: "https://cms.brawlhalla.com/c/uploads/2021/07/a_Roster_Pose_GhostArmorM.png",\
+        image: "https://cms.brawlhalla.com/c/uploads/2021/07/a_Roster_Pose_GhostArmorM.png",
         gender: "Other",
         weapons: ["Hammer", "Greatsword"], 
         stats: { str: 5, dex: 4, def: 9, spd: 4 }, 
