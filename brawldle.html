@@ -65,7 +65,61 @@
             text-align: center;
             max-width: 400px;
         }
-        
+        /* Container to keep everything centered */
+        .search-container {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 400px;
+        }
+
+        /* Our new styled input */
+        #brawldle-guess {
+            padding: 12px;
+            background: #1a1a1a;
+            border: 2px solid #444;
+            color: white;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #brawldle-guess:focus {
+            border-color: #ffca28; /* Gold focus color */
+        }
+
+        /* The actual dropdown menu */
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none; /* Hidden until user types */
+        }
+
+        /* Individual legend rows in the list */
+        .dropdown-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            color: #eee;
+            text-align: left;
+            transition: background 0.2s;
+            border-bottom: 1px solid #333;
+        }
+
+        .dropdown-item:hover {
+            background: #444;
+                color: #ffca28;
+        }
     </style>
 </head>
 <body>
@@ -76,10 +130,12 @@
                 Back to Index
             </a>
         </div>
-        <div style="margin: 20px 0; display: flex; justify-content: center; gap: 10px;">
-            <input list="legend-names" id="brawldle-guess" placeholder="Guess a legend..." style="padding: 10px; width: 200px;">
-            <datalist id="legend-names"></datalist>
-            <button onclick="makeGuess()" class="btn-add-tag" style="padding: 10px 20px;">Submit</button>
+        <div class="search-container">
+            <div style="position: relative; flex-grow: 1;">
+                <input type="text" id="brawldle-guess" placeholder="Guess a legend..." autocomplete="off">
+                <div id="custom-dropdown" class="dropdown-content"></div>
+            </div>
+            <button onclick="makeGuess()" class="btn-add-tag">Submit</button>
         </div>
 
         <div class="brawldle-grid" style="font-size: 0.8em; color: gray;">
