@@ -65,43 +65,45 @@
             text-align: center;
             max-width: 400px;
         }
-        /* 1. The main wrapper */
+        /* 1. The Main Container */
         .search-container {
-            margin: 20px auto;
-            display: flex; /* Keeps input and button on one line */
-            align-items: flex-start; /* Keeps button at the top of the input area */
-            gap: 10px;
-            max-width: 500px; /* Give it a bit more room */
-            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px; /* Adjust this to make the whole bar wider or thinner */
+            margin: 30px auto;
+            width: 95%;
         }
 
-        /* 2. The wrapper around the input and dropdown */
+        /* 2. The Wrapper around Input + Dropdown */
         .search-container > div:first-child {
-            flex-grow: 1; /* Tells the input wrapper to take up all available space */
-            position: relative; /* Essential for the dropdown to pop up in the right spot */
+            flex: 3; /* This tells the input to take up 3x more space than the button */
+            position: relative;
         }
 
-        /* 3. The input box itself */
+        /* 3. The Input Field itself */
         #brawldle-guess {
-            box-sizing: border-box; /* Makes sure padding doesn't push the width over 100% */
-            width: 100%; 
+            width: 100% !important; /* Force it to fill the wrapper */
             padding: 12px;
             background: #1a1a1a;
             border: 2px solid #444;
             color: white;
             border-radius: 8px;
-            font-size: 16px;
-            outline: none;
+            font-size: 1.1em;
+            box-sizing: border-box; /* Crucial: includes padding in the width calculation */
         }
 
-        /* 4. The button */
+        /* 4. The Submit Button */
         .search-container .btn-add-tag {
-            flex-shrink: 0; /* Prevents the button from getting squashed */
-            white-space: nowrap; /* Prevents "Submit" from breaking into two lines */
-            height: 48px; /* Matches the approximate height of the input */
+            flex: 1; /* This tells the button to take up the remaining 1 part of space */
+            width: auto !important; /* Overrides any "width: 100%" from other styles */
+            height: 48px; /* Matches the input height */
             padding: 0 20px;
-            margin: 0; /* Clear any stray margins */
-        }
+            margin: 0;
+            cursor: pointer;
+            font-weight: bold;
+            white-space: nowrap; /* Keeps the text on one line */
         }
 
         #brawldle-guess:focus {
