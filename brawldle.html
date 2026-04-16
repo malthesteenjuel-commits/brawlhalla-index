@@ -5,23 +5,51 @@
     <title>Brawldle!</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific Brawldle Styles */
+        /* The Main Container for rows and headers */
         .brawldle-grid {
             display: grid;
-            /* 8 columns for your 8 categories */
-            grid-template-columns: repeat(8, 1fr); 
-            gap: 10px;
-            margin-top: 20px;
+            /* This ensures exactly 8 columns that shrink to fit the screen */
+            grid-template-columns: repeat(8, minmax(0, 1fr)); 
+            gap: 5px; /* Reduced gap to save horizontal space */
+            margin-top: 10px;
             text-align: center;
+            align-items: center;
+            width: 100%;
+            max-width: 900px; /* Limits the width so it doesn't stretch too far on big monitors */
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        /* Updated Box Styling */
         .guess-box {
-            background-color: #2a2a2a;
-            padding: 15px;
-            border-radius: 8px;
+            aspect-ratio: 1/1; 
+            border-radius: 4px;
             color: white;
             font-weight: bold;
             display: flex;
             align-items: center;
+            justify-content: center;
+    
+            /* NEW: Fluid font and smaller padding to keep things inside the box */
+            font-size: clamp(0.6rem, 1.5vw, 0.9rem); 
+            padding: 2px;
+            overflow: hidden; /* Prevents text from pushing the box wider */
+            word-break: break-word; /* Allows long words like "Strength" to wrap if needed */
+    
+            border: 1px solid rgba(255,255,255,0.1); /* Subtle border */
+            box-sizing: border-box;
+        }
+
+        /* Style the headers specifically so they align with the boxes */
+        .header-label {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #bbb;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            height: 30px; /* Fixed height for headers */
+            display: flex;
+            align-items: flex-end;
             justify-content: center;
         }
         /* Wordle Colors */
