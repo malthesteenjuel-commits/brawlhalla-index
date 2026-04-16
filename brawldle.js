@@ -69,7 +69,7 @@ function renderGuessRow(guess) {
         setTimeout(() => {
             box.classList.add(res.status);
             box.style.transform = "rotateX(360deg)";
-        }, i * 100);
+        }, i * 400);
     });
 
     container.insertBefore(row, container.firstChild);
