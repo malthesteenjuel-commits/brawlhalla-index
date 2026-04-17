@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             dropdown.style.display = 'none';
         }
-        loadProgress();
     });
 
     // Close dropdown if user clicks anywhere else
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdown.style.display = 'none';
         }
     });
+    loadProgress();
 });
 
 // 2. The Main Guess Function
