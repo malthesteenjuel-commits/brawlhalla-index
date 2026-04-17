@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             dropdown.style.display = 'none';
         }
+        loadProgress();
     });
 
     // Close dropdown if user clicks anywhere else
@@ -67,6 +68,8 @@ window.makeGuess = () => {
     guesses.push(guess);
     renderGuessRow(guess);
     input.value = ""; // Clear search bar
+
+    saveProgress();
 
     // Check Win/Loss
     if (guess.id === targetLegend.id) {
@@ -156,3 +159,38 @@ window.copyResults = () => {
     navigator.clipboard.writeText(emojiText + "\nPlay here: " + window.location.href);
     alert("Result copied to clipboard! Paste it to your friends!");
 };
+function saveProgress() {
+    const gameState = {
+        date: new Date().toLocaleDateString(),
+        guesses: guesses, // This stores the array of legend objects
+        hasWon: hasWon
+    };
+    localStorage.setItem('brawldle_progress', JSON.stringify(gameState));
+}
+
+function loadProgress() {
+    const savedData = localStorage.getItem('brawldle_progress');
+    
+    if (savedData) {
+        const state = JSON.parse(savedData);
+        const today = new Date().toLocaleDateString();
+
+        // Only load if the save is from today
+        if (state.date === today) {
+            hasWon = state.hasWon;
+            // Loop through saved guesses and re-render them
+            state.guesses.forEach(guess => {
+                guesses.push(guess);
+                renderGuessRow(guess);
+            });
+
+            // If they already won or lost, show the modal immediately
+            if (hasWon || guesses.length >= 8) {
+                showResultModal(hasWon);
+            }
+        } else {
+            // It's a new day! Clear the old save
+            localStorage.removeItem('brawldle_progress');
+        }
+    }
+}
