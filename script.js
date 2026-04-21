@@ -308,7 +308,7 @@ const defaultLegends = [
         stats: { str: 6, dex: 5, def: 7, spd: 4 }, 
         highestStat: "Defense",
         tags: ["Gauntlets", "Hammer", "Asgardian", "'Bot' Bot", "Hat Wearer"],
-        hobby: "Unknown",
+        hobby: "None",
         origin: "Asgardian",
         yearAdded: 2016
     },
