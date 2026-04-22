@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 2. The Main Guess Function
 window.makeGuess = () => {
-    if (hasWon || guesses.length >= 8) return;
+    if (hasWon) return;
 
     const input = document.getElementById('brawldle-guess');
     const guessName = input.value.trim();
@@ -75,8 +75,6 @@ window.makeGuess = () => {
     if (guess.id === targetLegend.id) {
         hasWon = true;
         setTimeout(() => showResultModal(true), 3500); // Wait for animation
-    } else if (guesses.length >= 8) {
-        setTimeout(() => showResultModal(false), 3500);
     }
 };
 
@@ -137,8 +135,7 @@ function showResultModal(isWin) {
 }
 
 window.copyResults = () => {
-    let emojiText = `Brawldle ${new Date().toLocaleDateString()}\n${guesses.length}/8\n\n`;
-    
+    let emojiText = `Brawldle ${new Date().toLocaleDateString()}\nGuesses: ${guesses.length}\n\n`;    
     // This builds the emoji grid for sharing
     guesses.forEach(g => {
         let rowEmojis = "";
@@ -185,7 +182,7 @@ function loadProgress() {
             });
 
             // If they already won or lost, show the modal immediately
-            if (hasWon || guesses.length >= 8) {
+            if (hasWon) {
                 showResultModal(hasWon);
             }
         } else {
