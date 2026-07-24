@@ -884,6 +884,19 @@ const defaultLegends = [
         hobby: "None",
         origin: "Outer Space",
         yearAdded: 2026
+    },
+    { 
+        id: 69, 
+        name: "Aurus", 
+        image: "https://cms.brawlhalla.com/c/uploads/2026/06/a_Roster_Pose_GladiatorM.png",
+        gender: "Male",
+        weapons: ["Chakram", "Spear"], 
+        stats: { str: 6, dex: 6, def: 6, spd: 4 }, 
+        highestStat: ["Strength ", "Dexterity", "Defense"],
+        tags: ["Chakram", "Spear", "'Bot' Bot", "Hat Wearer"] ,
+        hobby: "None",
+        origin: "Rome",
+        yearAdded: 2026
     }
 ];
 let legends = JSON.parse(localStorage.getItem('brawlData')) || defaultLegends;
