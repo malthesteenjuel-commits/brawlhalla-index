@@ -897,7 +897,7 @@ const defaultLegends = [
         hobby: "None",
         origin: "Rome",
         yearAdded: 2026
-    }
+    },
      { 
         id: 70, 
         name: "Qinghua & Baobao", 
