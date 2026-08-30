@@ -906,7 +906,7 @@ const defaultLegends = [
         weapons: ["Orb", "Cannon"], 
         stats: { str: 5, dex: 4, def: 5, spd: 8 }, 
         highestStat: "Speed",
-        tags: ["Orb", "Cannon", "Outer Space", "Hat Wearer", "Pet Owner", "Book CLub", "'Bot' Bot"] ,
+        tags: ["Orb", "Cannon", "Outer Space", "Hat Wearer", "Pet Owner", "Book Club", "'Bot' Bot"] ,
         hobby: "Book club",
         origin: "Outer Space",
         yearAdded: 2026
