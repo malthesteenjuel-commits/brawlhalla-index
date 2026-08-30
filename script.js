@@ -898,6 +898,19 @@ const defaultLegends = [
         origin: "Rome",
         yearAdded: 2026
     }
+     { 
+        id: 70, 
+        name: "Qinghua & Baobao", 
+        image: "https://cms.brawlhalla.com/c/uploads/2026/08/a_Roster_Pose_AstroGirlM.png",
+        gender: "Female",
+        weapons: ["Orb", "Cannon"], 
+        stats: { str: 5, dex: 4, def: 5, spd: 8 }, 
+        highestStat: ["Speed"],
+        tags: ["Orb", "Cannon", "Outer Space", "Hat Wearer", "Pet Owner", "Book CLub", "'Bot' Bot"] ,
+        hobby: "Book club",
+        origin: "Outer Space",
+        yearAdded: 2026
+    }
 ];
 let legends = JSON.parse(localStorage.getItem('brawlData')) || defaultLegends;
 
