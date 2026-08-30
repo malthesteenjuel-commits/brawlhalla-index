@@ -905,7 +905,7 @@ const defaultLegends = [
         gender: "Female",
         weapons: ["Orb", "Cannon"], 
         stats: { str: 5, dex: 4, def: 5, spd: 8 }, 
-        highestStat: ["Speed"],
+        highestStat: "Speed",
         tags: ["Orb", "Cannon", "Outer Space", "Hat Wearer", "Pet Owner", "Book CLub", "'Bot' Bot"] ,
         hobby: "Book club",
         origin: "Outer Space",
